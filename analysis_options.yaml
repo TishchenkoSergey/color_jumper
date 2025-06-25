@@ -9,6 +9,9 @@ analyzer:
     - build/**
   plugins:
     - custom_lint
+  errors:
+    lines_longer_than_80_chars: ignore
+
 
 custom_lint:
   rules:
@@ -26,3 +29,10 @@ custom_lint:
     - avoid_debug_print_in_release
     - avoid_using_api:
       severity: info
+
+dart_code_metrics:
+  rules:
+    - lines_longer_than_x:
+        maxLength: 120
+        ignoreComments: true
+        ignoreUrls: true

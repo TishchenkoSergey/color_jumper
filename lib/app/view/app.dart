@@ -1,21 +1,40 @@
-import 'package:color_jumper/features/features.dart';
+import 'package:color_jumper/app/route/route.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 /// Application [App]
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   /// Application [App]
-  const App({super.key});
+  const App({
+    required this.serviceLocator,
+    super.key,
+  });
+
+  /// The service locator used for dependency injection.
+  final GetIt serviceLocator;
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  late final route = AppRoute(
+    serviceLocator: widget.serviceLocator,
+  ).build(context);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepPurple,
         ),
         useMaterial3: true,
       ),
-      home: const MainScreen(),
+      routeInformationProvider: route.routeInformationProvider,
+      routeInformationParser: route.routeInformationParser,
+      routerDelegate: route.routerDelegate,
+      backButtonDispatcher: route.backButtonDispatcher,
     );
   }
 }

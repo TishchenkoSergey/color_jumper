@@ -1,8 +1,9 @@
+import 'package:color_jumper/features/features.dart';
 import 'package:flutter/material.dart';
 
-import 'package:color_jumper/features/features.dart';
-
+/// Application [App]
 class App extends StatelessWidget {
+  /// Application [App]
   const App({super.key});
 
   @override

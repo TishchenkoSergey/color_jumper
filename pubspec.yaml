@@ -9,10 +9,6 @@ environment:
 
 dependencies:
   bloc: ^9.0.0
-
-  domain:
-    path: ./packages/domain
-
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1

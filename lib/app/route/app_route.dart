@@ -31,7 +31,9 @@ class AppRoute {
       path: '/${Routes.mainScreen.name}',
       pageBuilder: (context, state) => CupertinoPage(
         child: BlocProvider(
-          create: (context) => MainCubit(),
+          create: (context) => MainCubit(
+            serviceLocator.get(),
+          ),
           child: const MainScreen(),
         ),
       ),

@@ -7,13 +7,13 @@ import 'package:go_router/go_router.dart';
 
 /// Manages the application's route configuration using [GoRouter].
 class AppRoute {
+  /// The service locator used for dependency injection.
+  final GetIt serviceLocator;
+
   /// Creates an [AppRoute] instance with the given [serviceLocator].
   AppRoute({
     required this.serviceLocator,
   });
-
-  /// The service locator used for dependency injection.
-  final GetIt serviceLocator;
 
   /// Builds and returns the application's [GoRouter] instance.
   GoRouter build(BuildContext context) {

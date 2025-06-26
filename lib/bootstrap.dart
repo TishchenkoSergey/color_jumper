@@ -25,11 +25,11 @@ class AppBlocObserver extends BlocObserver {
 
 /// Holds initialized services for the app.
 class BootstrapResult {
-  /// Creates a result with the given [serviceLocator].
-  BootstrapResult(this.serviceLocator);
-
   /// Dependency injection container.
   final GetIt serviceLocator;
+
+  /// Creates a result with the given [serviceLocator].
+  BootstrapResult(this.serviceLocator);
 }
 
 /// Sets up error handling, BLoC observer, DI, and runs the app.

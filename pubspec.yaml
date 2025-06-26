@@ -47,3 +47,4 @@ splash_master:
   android_12_and_above:
     color: '#FFFFFF'
     image: 'assets/logo/logo.png'
+    splash_screen_icon_scale: 0.5

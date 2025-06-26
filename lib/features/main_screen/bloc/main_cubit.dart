@@ -16,18 +16,21 @@ class MainCubit extends Cubit<MainState> {
   /// Creates a [MainCubit] with the given [ColorGeneratorService].
   /// Immediately generates the first color on initialization.
   MainCubit(this._colorGeneratorService) : super(const MainState()) {
-    changeColor();
+    _setNewColor();
   }
 
-  /// Generates a new random color and updates the state.
-  void changeColor() {
+  /// Generates a new random [ColorInfo] using [_colorGeneratorService]
+  /// and updates the current state with the new color.
+  void _setNewColor() {
     final newColorInfo = _colorGeneratorService.generateColorInfo();
 
-    emit(
-      state.copyWith(
-        colorInfo: newColorInfo,
-        tapCount: state.tapCount + 1,
-      ),
-    );
+    emit(state.copyWith(colorInfo: newColorInfo));
+  }
+
+  /// Increments the tap count and generates a new color.
+  void changeColor() {
+    _setNewColor();
+
+    emit(state.copyWith(tapCount: state.tapCount + 1));
   }
 }

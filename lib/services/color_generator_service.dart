@@ -15,7 +15,7 @@ abstract class ColorGeneratorService {
 /// Generates a random color, computes its contrast color, and guesses a name for it using the [ColorNames] package.
 @Injectable(as: ColorGeneratorService)
 class ColorGeneratorServiceImpl implements ColorGeneratorService {
-  final Random _random = Random();
+  final Random _random = Random(DateTime.now().microsecond);
 
   @override
   ColorInfo generateColorInfo() {
@@ -31,14 +31,16 @@ class ColorGeneratorServiceImpl implements ColorGeneratorService {
   }
 
   Color _generateRandomColor() {
-    int colorRangeValue() => _random.nextInt(kColorMaxRangeValue);
-
     return Color.fromARGB(
       kColorTransparent,
-      colorRangeValue(),
-      colorRangeValue(),
-      colorRangeValue(),
+      _colorRangeValue(),
+      _colorRangeValue(),
+      _colorRangeValue(),
     );
+  }
+
+  int _colorRangeValue() {
+    return _random.nextInt(kColorMaxRangeValue);
   }
 
   Color _getContrastingTextColor(Color color) {

@@ -33,7 +33,8 @@ class BootstrapResult {
 }
 
 /// Sets up error handling, BLoC observer, DI, and runs the app.
-Future<void> bootstrap(FutureOr<Widget> Function(BootstrapResult result) builder) async {
+Future<void> bootstrap(
+    FutureOr<Widget> Function(BootstrapResult result) builder) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   FlutterError.onError = (details) {

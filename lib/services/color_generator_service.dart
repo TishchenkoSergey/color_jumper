@@ -42,7 +42,9 @@ class ColorGeneratorServiceImpl implements ColorGeneratorService {
   }
 
   Color _getContrastingTextColor(Color color) {
-    return color.computeLuminance() < kLuminanceDarkThreshold ? Colors.white : Colors.black;
+    return color.computeLuminance() < kLuminanceDarkThreshold
+        ? Colors.white
+        : Colors.black;
   }
 
   String _getColorName(Color color) {

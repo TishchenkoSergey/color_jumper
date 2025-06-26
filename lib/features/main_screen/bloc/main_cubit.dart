@@ -7,7 +7,6 @@ part 'main_state.dart';
 
 part 'main_cubit.freezed.dart';
 
-
 /// A [MainCubit] that manages tap count and color-related state.
 /// It generates a new random color and updates the state each time [changeColor] is called.
 class MainCubit extends Cubit<MainState> {
@@ -24,9 +23,11 @@ class MainCubit extends Cubit<MainState> {
   void changeColor() {
     final newColorInfo = _colorGeneratorService.generateColorInfo();
 
-    emit(state.copyWith(
-      colorInfo: newColorInfo,
-      tapCount: state.tapCount + 1,
-    ),);
+    emit(
+      state.copyWith(
+        colorInfo: newColorInfo,
+        tapCount: state.tapCount + 1,
+      ),
+    );
   }
 }

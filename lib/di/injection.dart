@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 @InjectableInit(
   externalPackageModulesBefore: [],
 )
+
 /// Initializes and configures di using `GetIt` and `injectable`.
 Future<GetIt> configureDependencies() async => GetIt.asNewInstance().init();
 

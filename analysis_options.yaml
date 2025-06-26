@@ -15,12 +15,12 @@ analyzer:
 
 custom_lint:
   rules:
+    - avoid_unused_parameters: false
     - cyclomatic_complexity:
       max_complexity: 4
     - function_lines_of_code:
       max_lines: 80
     - avoid_non_null_assertion
-    - avoid_late_keyword
     - avoid_global_state
     - avoid_returning_widgets
     - avoid_unnecessary_setstate

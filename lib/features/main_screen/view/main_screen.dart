@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
             onTap: context.read<MainCubit>().changeColor,
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              color: state.colorInfo!.backgroundColor,
+              color: state.colorInfo?.backgroundColor,
               width: double.infinity,
               height: double.infinity,
               child: SafeArea(
@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
                       const Spacer(),
                       StyledText(
                         text: 'Hey there',
-                        color: state.colorInfo!.textColor,
+                        color: state.colorInfo?.textColor ?? Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 32,
                       ),
@@ -37,12 +37,12 @@ class MainScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           StyledText(
-                            text: 'Color: ${state.colorInfo!.colorName}',
-                            color: state.colorInfo!.textColor,
+                            text: 'Color: ${state.colorInfo?.colorName ?? ''}',
+                            color: state.colorInfo?.textColor ?? Colors.black,
                           ),
                           StyledText(
                             text: 'Taps: ${state.tapCount}',
-                            color: state.colorInfo!.textColor,
+                            color: state.colorInfo?.textColor ?? Colors.black,
                           ),
                         ],
                       ),

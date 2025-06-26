@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:color_jumper/constant/constants.dart';
 import 'package:color_jumper/models/models.dart';
 import 'package:colornames/colornames.dart';
 import 'package:flutter/material.dart';
@@ -30,16 +31,18 @@ class ColorGeneratorServiceImpl implements ColorGeneratorService {
   }
 
   Color _generateRandomColor() {
+    int colorRangeValue() => _random.nextInt(kColorMaxRangeValue);
+
     return Color.fromARGB(
-      255,
-      _random.nextInt(256),
-      _random.nextInt(256),
-      _random.nextInt(256),
+      kColorTransparent,
+      colorRangeValue(),
+      colorRangeValue(),
+      colorRangeValue(),
     );
   }
 
   Color _getContrastingTextColor(Color color) {
-    return color.computeLuminance() < 0.5 ? Colors.white : Colors.black;
+    return color.computeLuminance() < kLuminanceDarkThreshold ? Colors.white : Colors.black;
   }
 
   String _getColorName(Color color) {

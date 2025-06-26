@@ -2,13 +2,6 @@ import 'package:flutter/material.dart';
 
 /// Holds color data including background, contrasting text color, and name.
 class ColorInfo {
-  /// Creates a [ColorInfo] instance with the given background color, text color, and color name.
-  const ColorInfo({
-    required this.backgroundColor,
-    required this.textColor,
-    required this.colorName,
-  });
-
   /// The generated background color.
   final Color backgroundColor;
 
@@ -17,4 +10,11 @@ class ColorInfo {
 
   /// A human-readable name of the background color.
   final String colorName;
+
+  /// Creates a [ColorInfo] instance with the given background color, text color, and color name.
+  const ColorInfo({
+    required this.backgroundColor,
+    required this.textColor,
+    required this.colorName,
+  });
 }

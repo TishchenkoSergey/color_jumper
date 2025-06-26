@@ -6,7 +6,7 @@ class StyledText extends StatelessWidget {
   const StyledText({
     required this.text,
     required this.color,
-    this.fontSize = 24,
+    this.fontSize = 20,
     this.fontWeight,
     super.key,
   });

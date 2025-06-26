@@ -1,14 +1,31 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectId=149)](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_url?projectId=149)
+# Test task for Solid Software
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+![Preview](/assets/resources/preview.gif)
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+## Instruction
+1. Install Flutter
+2. Create a test application
+3. The application should: display the text "Hey there" in the middle of the screen and after tapping anywhere on the screen, a background color should be changed to a randomly generated color. You can also add any other feature to the app - that adds bonus points
+4. Please do not use any external libraries for color generation
+5. Use [solid_lints](https://pub.dev/packages/solid_lints) to  perform static code analysis and fix any issues.
+6. Don't use any "AI tools" like ChatGPT or similar.
+7. Push code to GitHub
+8. Send the link to the GitHub repository back
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/TishchenkoSergey/color_jumper.git
+cd color_jumper
+```
+
+### 2. Install Dependencies
+```bash
+flutter pub get
+```
+
+### 3. Install Dependencies
+```bash
+flutter run
+```

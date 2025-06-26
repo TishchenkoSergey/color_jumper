@@ -27,6 +27,7 @@ dev_dependencies:
     sdk: flutter
   injectable_generator: ^2.7.0
   solid_lints: ^0.3.1
+  splash_master: ^0.0.2
 
 dependency_overrides:
   meta: ^1.17.0
@@ -34,3 +35,15 @@ dependency_overrides:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/logo/
+
+splash_master:
+  color: '#FFFFFF'
+  image: 'assets/logo/logo.png'
+  ios_content_mode: 'center'
+  android_gravity: 'center'
+  android_12_and_above:
+    color: '#FFFFFF'
+    image: 'assets/logo/logo.png'
